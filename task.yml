@@ -5,21 +5,21 @@
     - name: Copy Dockerfile
       copy:
        src: Dockerfile
-       dest: /home/ansadmin/
+       dest: /home/ansible/
     - name: Copy Artifact
       copy:
        src: target
-       dest: /home/ansadmin
+       dest: /home/ansible
     - name : Build image
-      command: docker build -t ashokit/mavenwebapp .
+      command: docker build -t 562100/mavenwebapp .
     - name : Push Docker Image
-      command: docker push ashokit/mavenwebapp
+      command: docker push 562100/mavenwebapp
 - name: Second Play - K8s Deployment
   hosts: eks
   tasks:
    - name: 
      copy:
        src: k8s-deploy.yml
-       dest: /home/ansadmin
+       dest: /home/ansible
    - name : K8S Deployment
      command: kubectl apply -f k8s-deploy.yml
