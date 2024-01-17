@@ -1,6 +1,7 @@
 ---
 - name: First Play - Docker Image Build
-  hosts: docker
+  hosts: docker ansible_user=bahadur
+  remote_user: bahadur
   tasks:
     - name: Copy Dockerfile
       copy:
