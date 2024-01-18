@@ -14,12 +14,12 @@
       command: docker build -t 562100/mavenwebapp .
     - name : Push Docker Image
       command: docker push 562100/mavenwebapp
-- name: Second Play - K8s Deployment
-  hosts: eks
-  tasks:
-   - name: 
-     copy:
-       src: k8s-deploy.yml
-       dest: /home/ansible
-   - name : K8S Deployment
-     command: kubectl apply -f k8s-deploy.yml
+# - name: Second Play - K8s Deployment
+#   hosts: eks
+#   tasks:
+#    - name: 
+#      copy:
+#        src: k8s-deploy.yml
+#        dest: /home/ansible
+#    - name : K8S Deployment
+#      command: kubectl apply -f k8s-deploy.yml
